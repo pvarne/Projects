@@ -1,0 +1,163 @@
+.header {
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: fixed;
+    top:0px;
+    right: 0px;
+    left:0px;
+    background-color: white;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(228, 228, 228);
+    z-index:100;
+}
+
+.left-section {
+ 
+    display: flex;
+    align-items: center;
+}
+
+.hamburger{
+    margin-left: 24px;
+    margin-right: 24px;
+    height: 24px;
+}
+
+.yt-logo{
+    height: 20px;
+}
+
+.middle-section {
+     display: flex;
+     align-items: center;
+     flex:1;      /*   for flexible content , search bar will grow/shrink with display: ; */
+     margin-left: 70px;
+     margin-right:35px;
+     max-width: 500px;   /*This will stop search bar to grow after a specific lenght*/
+}
+
+.search {   
+    flex: 1;
+    height: 36px;
+    padding-left: 10px;
+    font-size: 16px;    /*not font size of placeholder its is size of search letters we type in*/
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(202, 198, 198);
+    border-radius: 2px;
+    box-shadow: inset 1px 2px 5px rgba(0, 0, 0, 0.05);  /*Inset is to set shadow inside box*/
+}
+.search::placeholder{
+    font-family: Roboto, Arial;
+    font-size: 15px;  
+}
+.searchBtn{
+    height: 40px;
+    width: 66px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(199, 194, 194);
+    margin-left: -1px;  /*margin usually pushes the elements away with space but negative margin pulls it more closer.*/
+    margin-right: 10px;
+    cursor: pointer;
+    position: relative;
+}
+.searchBtn .tooltip,
+.voiceSrchBtn .tooltip,
+.upload-container .tooltip,
+.apps-container .tooltip,
+.notifications-container .tooltip
+{
+    background-color: rgb(124, 123, 123);
+    color:white;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 2px;
+    font-size: 13px;
+    position: absolute;
+    bottom: -30px;
+    opacity: 0;
+    transition: opacity 0.15s;
+    pointer-events: none;
+    white-space: nowrap;    /*to avoid wrapping of text to new line (this will continue all the text in one line )*/
+}
+
+.searchBtn:hover .tooltip,
+.voiceSrchBtn:hover .tooltip,
+.upload-container:hover .tooltip,
+.apps-container:hover .tooltip,
+.notifications-container:hover .tooltip{
+    opacity: 1;
+}
+
+.searchIcn{
+    height: 25px;
+    margin-top: 4px;
+}
+.voiceSrchBtn{
+    height: 40px;
+    width: 40px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgb(246, 246, 246);
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.upload-container,
+.apps-container,
+.notifications-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+.voiceSrchIcn{
+    height: 30px;
+    margin-top: 4px;
+}
+
+.right-section {
+    width: 180px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+.yt-upload,
+.yt-apps,
+.yt-notification
+{
+    height: 30px;
+}
+
+.notifications-container{
+    position: relative;
+}
+.notify-count{
+    position: absolute;
+    top:-3px;       /*to make image more higher than container img height*/
+    right: -4px;
+    font-family: Roboto,Arial;
+    font-size: 12px;
+    background-color: rgb(176, 13, 13);
+    color: white;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 6px;
+    padding-right: 6px;
+    border-radius: 20px;
+}
+.curr_user{
+    height: 32px;
+    border-radius: 16px;
+    cursor: pointer;
+}

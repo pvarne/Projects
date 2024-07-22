@@ -1,0 +1,100 @@
+.thumbnail {
+    display: block;
+    margin-bottom: 8px;
+    width: 100%;
+}
+.thumbnail-row{
+    position: relative;
+}
+.time{
+    background-color: black;
+    color:white;
+    position: absolute;
+    bottom: 10px;
+    right: 5px;
+    font-family: Roboto, Arial;
+    font-size: 12px;
+    font-weight: 500;
+    /* padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 4px;
+    padding-bottom: 4px; */
+    padding:4px;    /*usign shorthand property*/
+}
+.video-title {
+    font-weight: 600;
+    font-size: 14px;
+    display: inline-block;
+    padding-bottom: 0%;
+    margin-top: 0%;
+    margin-bottom: 10px;
+}
+
+.video-details {
+    display: inline-block;
+}
+
+.video-icon {
+    width: 36px;
+    border-radius: 25px;
+    display: inline-block;
+    padding-right: 5px;
+    vertical-align: top;
+}
+
+.video-dec {
+    width: 300px;
+    display: inline-block;
+    padding-left: 0%;
+    margin-left: 0%;
+}
+
+.channel-nm {
+    display: block;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    color: gray;
+    font-size: small;
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+
+.video-stats {
+    font-size: 12px;
+    display: inline-block;
+    padding-top: 0px;
+    margin-top: 0%;
+    color: gray;
+}
+
+.profile-pic {
+    width: 100%;
+    border-radius: 25px;
+}
+
+.video-preview {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 16px;
+    row-gap: 35px;
+    padding-left: 80px;
+
+}
+
+@media (max-width :750px){          /*this will be activated on scren 750 px or less 3 column screen will be changed to 2 */
+    .video-preview {
+    grid-template-columns: 1fr 1fr ;
+    }
+}
+
+@media (min-width :1000px){          /*this will be activated on scren 1000 px or more 2 column screen will be changed to 4 */
+    .video-preview {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media (min-width :751px) and (max-width :999px){ /*between range it will normal 3 columns*/
+    .video-preview {
+        grid-template-columns: 1fr 1fr 1fr ;
+        }
+}
