@@ -48,13 +48,13 @@
 
 <body>
     <p class="header">Rock Paper Scissors</p>
-    <button class="move-btn" onclick="playGame('Rock') ">
+    <button class="move-btn js-RockBtn" >
         <img class="icons" src="icons/rock-emoji.png">
     </button>
-    <button class="move-btn" onclick="playGame('Paper')">
+    <button class="move-btn js-PaperBtn" >
         <img class="icons" src="icons/paper-emoji.png">
     </button>
-    <button class="move-btn" onclick="playGame('Scissors')">
+    <button class="move-btn js-ScissorsBtn" >
         <img  class="icons" src="icons/scissors-emoji.png">
     </button>
     <p class="js-result result"></p>
@@ -65,6 +65,18 @@
     <button class="resetbtn" onclick="resetScore()">Reset Score</button>
     
     <script>
+        //enabling game even when we click r for rock,p for paper,s for scissors btns
+        document.body.addEventListener('keydown',(event)=>{
+            if(event.key ==='r'){
+                playGame('Rock');
+            }
+            else if(event.key ==='s'){
+                playGame('Scissors');
+            }
+            else if(event.key ==='p'){
+                playGame('Paper');
+            }
+        })
         let compChoice ='';
        const score ={
                 win:0,
@@ -74,7 +86,18 @@
         // score = localStorage.getItem('score');
 
         //Saving score into localStorage(inbuild object) to avoid resetting on page refresh
-    
+        
+        document.querySelector('.js-RockBtn').addEventListener('click',()=>{
+            playGame('Rock')
+        });
+
+        document.querySelector('.js-PaperBtn').addEventListener('click',()=>{
+            playGame('Paper')
+        });
+
+        document.querySelector('.js-ScissorsBtn').addEventListener('click',()=>{
+            playGame('Scissors')
+        });
 
         function playGame(userChoice){
 
